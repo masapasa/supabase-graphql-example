@@ -31,7 +31,7 @@ function fetchGraphQLSchema(url, options) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      apiKey: process.env.SUPABASE_ANON_KEY,
+      apiKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     },
     body: JSON.stringify({
       query: getIntrospectionQuery(),
@@ -48,17 +48,17 @@ function fetchGraphQLSchema(url, options) {
     });
 }
 
-const filePath = path.join(__dirname, "../graphql/schema/", "schema.graphql");
+const filePath = path.join(__dirname, "../graphql/schema/schema.graphql");
 
 console.log();
 
 console.log(
   supagradient(
-    `🗞   Fetching GraphQL Schema from ${process.env.SUPABASE_URL} ...`
+    `🗞   Fetching GraphQL Schema from ${process.env.NEXT_PUBLIC_SUPABASE_URLL} ...`
   )
 );
 
-fetchGraphQLSchema(`${process.env.SUPABASE_URL}/graphql/v1`, {
+fetchGraphQLSchema(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/graphql/v1`, {
   readable: true,
 }).then((schema) => {
   fs.writeFileSync(filePath, schema, "utf-8");

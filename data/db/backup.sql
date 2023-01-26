@@ -43,7 +43,6 @@ COMMENT ON EXTENSION pg_graphql IS 'GraphQL support';
 
 CREATE EXTENSION IF NOT EXISTS pg_net WITH SCHEMA extensions;
 
-
 --
 -- Name: EXTENSION pg_net; Type: COMMENT; Schema: -; Owner: -
 --

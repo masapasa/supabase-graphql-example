@@ -19,10 +19,13 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "codegen": "graphql-codegen",
+    "codegen": "graphql-codegen init",
     "codegen:fetch": "node --no-warnings scripts/fetchGraphQLSchema ",
     "codegen:watch": "yarn run codegen -- --watch",
     "prebuild": "yarn run codegen",
     "build": "yarn workspaces run build"
+  },
+  "dependencies": {
+    "cross-undici-fetch": "^0.4.14"
   }
 }
